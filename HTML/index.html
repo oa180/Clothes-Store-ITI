@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Styles/style.css" />
+    <title>Casmart</title>
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <div class="header-search">
+          <input
+            type="search"
+            name="search"
+            placeholder="Search Product..."
+            class="input-field"
+          />
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+
+        <a href="./index.html" class="logo">
+          <img
+            src="../images/logo.svg"
+            alt="Casmart logo"
+            width="130"
+            height="31"
+          />
+        </a>
+
+        <div class="header-actions">
+          <button class="header-action-btn">
+            <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Sign in</p>
+          </button>
+
+          <button class="header-action-btn">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Search</p>
+          </button>
+
+          <button class="header-action-btn cart-btn">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Cart</p>
+            <div class="btn-badge green cart-no-items" aria-hidden="true">
+              0
+            </div>
+          </button>
+
+          <button class="header-action-btn">
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Wishlisht</p>
+
+            <div class="btn-badge" aria-hidden="true">2</div>
+          </button>
+        </div>
+
+        <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="#" class="logo">
+              <img
+                src="../images/logo.svg"
+                alt="Casmart logo"
+                width="130"
+                height="31"
+              />
+            </a>
+
+            <button
+              class="nav-close-btn"
+              data-nav-close-btn
+              aria-label="Close Menu"
+            >
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <!-- 
+            <li>
+              <a href="#" class="navbar-link">Shop</a>
+            </li>
+
+            <li>
+              <a href="#" class="navbar-link">About</a>
+            </li>
+
+            <li>
+              <a href="#blog" class="navbar-link">Blog</a>
+            </li> -->
+
+            <li>
+              <div class="header-search hide-search">
+                <input
+                  type="search"
+                  name="search"
+                  placeholder="Search Product..."
+                  class="input-field"
+                />
+
+                <button class="search-btn" aria-label="Search">
+                  <ion-icon name="search-outline"></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li>
+              <a href="./index.html" class="navbar-link">Home</a>
+            </li>
+            <li>
+              <a href="./about-page.html" class="navbar-link">About</a>
+            </li>
+            <li>
+              <a href="./contact-page.html" class="navbar-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <section class="hero" id="home">
+          <div class="slide-show-container">
+            <img src="../images/blog-2.jpg" class="fade" displayed-img />
+            <div class="btns">
+              <button class="next-img-btn" next-btn>></button>
+              <button class="prev-img-btn" prev-btn><</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="service">
+          <div class="container">
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-item-icon">
+                  <img src="../images/service-icon-1.svg" alt="Service Icon" />
+                </div>
+                <div class="service-content">
+                  <p class="service-item-title">Free Shipping</p>
+                  <p class="service-item-text">On All Orders Over $599</p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-item-icon">
+                  <img src="../images/service-icon-2.svg" alt="Service Icon" />
+                </div>
+                <div class="service-content">
+                  <p class="service-item-title">Easy Return</p>
+                  <p class="service-item-text">30 Day Retun Policy</p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-item-icon">
+                  <img src="../images/service-icon-3.svg" alt="Service Icon" />
+                </div>
+                <div class="service-content">
+                  <p class="service-item-title">Secure Payment</p>
+                  <p class="service-item-text">100% Secure Guarantee</p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-item-icon">
+                  <img src="../images/service-icon-4.svg" alt="Service Icon" />
+                </div>
+                <div class="service-content">
+                  <p class="service-item-title">Special Support</p>
+                  <p class="service-item-text">24/7 Dedicated Support</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section category">
+          <div class="container">
+            <ul class="category-list">
+              <li class="category-item">
+                <figure class="category-banner">
+                  <img
+                    src="../images/category-1.jpg"
+                    alt="Sunglass & Eye"
+                    loading="lazy"
+                    class="w-100"
+                  />
+                </figure>
+                <a href="#" id="Sunglasses" class="btn btn-secondary"
+                  >Sunglass & Eye</a
+                >
+              </li>
+              <li class="category-item">
+                <figure class="category-banner">
+                  <img
+                    src="../images/category-2.jpg"
+                    alt="Active & Outdoor"
+                    loading="lazy"
+                    class="w-100"
+                  />
+                </figure>
+                <a href="#" id="Men" class="btn btn-secondary">Men Wear</a>
+              </li>
+              <li class="category-item">
+                <figure class="category-banner">
+                  <img
+                    src="../images/category-3.jpg"
+                    alt="Winter Wear"
+                    loading="lazy"
+                    class="w-100"
+                  />
+                </figure>
+                <a href="#" id="Woman" class="btn btn-secondary">Woman Wear</a>
+              </li>
+              <li class="category-item">
+                <figure class="category-banner">
+                  <img
+                    src="../images/category-4.jpg"
+                    alt="Exclusive Footwear"
+                    loading="lazy"
+                    class="w-100"
+                  />
+                </figure>
+                <a href="#" id="FootWear" class="btn btn-secondary"
+                  >Exclusive Footwear</a
+                >
+              </li>
+
+              <li class="category-item">
+                <figure class="category-banner">
+                  <img
+                    src="../images/category-5.jpg"
+                    alt="Jewelry"
+                    loading="lazy"
+                    class="w-100"
+                  />
+                </figure>
+                <a href="#" id="Accessory" class="btn btn-secondary"
+                  >Accessory</a
+                >
+              </li>
+
+              <li class="category-item">
+                <figure class="category-banner">
+                  <img
+                    src="../images/category-6.jpg"
+                    alt="Sports Cap"
+                    loading="lazy"
+                    class="w-100"
+                  />
+                </figure>
+                <a href="#" class="btn btn-secondary">Sports Cap</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section product">
+          <div class="container">
+            <h2 class="h2 section-title">Products of the Week</h2>
+            <ul class="filter-list">
+              <li>
+                <button class="filter-btn active">Highest Prices</button>
+              </li>
+              <li>
+                <button class="filter-btn">Lowest Prices</button>
+              </li>
+              <li>
+                <button class="filter-btn">High Rate</button>
+              </li>
+              <li>
+                <button class="filter-btn">New Arrival</button>
+              </li>
+            </ul>
+
+            <ul class="product-list"></ul>
+
+            <button class="btn btn-outline">View All Products</button>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img src="../images/logo.svg" alt="" />
+            </a>
+            <p class="footer-text">
+              Casmart is a fasion theme for presents a complete wardrobe of
+              uniquelt crafted Ethnic Wear, Casual, Edgy Denims , & Accessories
+              inspired from the most contemporary
+            </p>
+
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Information</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Payment Type</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Award Winning</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">World Media Partner</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Become an Agent</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Refund Policy</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Category</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Handbags & Wallets</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Women's Colthing</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Plus Sizes</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Complete Your Look</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Baby Corner</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Man & Woman Sheo</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Help & Support</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">FAQ Information</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Return Policy</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Shipping & Delivery</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Order Tracking</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">List of Shops</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy;2023 <a href="#">OmarAbdo180</a>. All Rights Reserved
+          </p>
+
+          <ul class="footer-bottom-list">
+            <li>
+              <a href="#" class="footer-bottom-link">Privacy & Policy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-bottom-link">Sitemap</a>
+            </li>
+          </ul>
+
+          <div class="payment">
+            <div class="payment-title">We Support</div>
+            <img
+              src="../images/payment-img.png"
+              alt="Online Payment Logos"
+              class="payment-img"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../Data/products.js"></script>
+    <script src="../Scripts/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

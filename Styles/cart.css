@@ -889,10 +889,22 @@ h1 {
     text-align: center;
     border-radius: 20px;
     font-size: var(--fs-5);
-    background: var(--ocean-green);
+    background: linear-gradient(
+      30deg,
+      var(--ocean-green) 0%,
+      var(--middle-blue-green) 100%
+    );
+
+    color: var(--cultured);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
   }
 
-  .buy-btn:is(:hover) {
-    background: rgb(100, 196, 145, 0.7);
+  .buy-btn:hover {
+    transform: scale(1.05);
+  }
+  .buy-btn:active {
+    transform: scale(1.05) translateY(10px);
   }
 }

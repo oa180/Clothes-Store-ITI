@@ -17,7 +17,7 @@ function increaseValue(pid) {
   // Update total price
   displayItemInCart();
 }
-function decreaseValue(pid) {
+function decreaseValue(pid, event) {
   let value = parseInt(document.getElementsByClassName(pid)[0].value, 10);
   value = isNaN(value) ? 0 : value;
   value--;
@@ -26,7 +26,7 @@ function decreaseValue(pid) {
   localStorage.setItem(pid, value);
 
   // Remove item form cart if its value reached 0
-  if (localStorage.getItem(pid) == 0) removeCartItem(pid);
+  if (localStorage.getItem(pid) == 0) removeCartItem(pid, event);
   // Update total price
   displayItemInCart();
 }
@@ -87,7 +87,7 @@ function displayItemInCart() {
           <div
             class="value-button"
             id="decrease"
-            onclick="decreaseValue(${pid})"
+            onclick="decreaseValue(${pid}, event)"
             value="Decrease Value"
           >
             -
@@ -129,7 +129,7 @@ function removeCartItem(pid, event) {
   event.stopPropagation();
 
   localStorage.removeItem(pid);
-  changeCartFocusImg("./images/shiipingcart2resized.jpg");
+  changeCartFocusImg("../images/shiipingcart2resized.jpg");
   displayItemInCart();
 }
 

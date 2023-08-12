@@ -26,9 +26,10 @@ for (let i = 0; i < navElemArr.length; i++) {
 }
 
 // Hide Header when scrolling 200px
-const header = document.querySelector("[data-header]");
 
 window.addEventListener("scroll", function () {
+  const header = document.querySelector("[data-header]");
+  const upBtn = document.getElementById("upBtn");
   if (this.window.scrollY >= 200) {
     header.classList.add("hidden");
     navbarSearch.classList.remove("hide-search");
@@ -36,6 +37,12 @@ window.addEventListener("scroll", function () {
     header.classList.remove("hidden");
     // navbar.style.top = "-100px";
     navbarSearch.classList.add("hide-search");
+  }
+
+  if (this.window.scrollY >= 600) {
+    upBtn.style.display = "block";
+  } else {
+    upBtn.style.display = "none";
   }
 });
 
@@ -120,7 +127,7 @@ categoryItem.forEach((item) => {
 
 /** ************************************************* */
 /**
- * Categories => [women, men, accessories, foot-wear, sunglasses, ]
+ * Categories => [women, men, accessories, foot-wear, sunglasses,  Kids]
  */
 /**
  * Display Products Function
@@ -191,6 +198,7 @@ function displayListOfProducts(products) {
             ? `<data value="37.57">&pound;37.75</data>`
             : ""
         }
+        <data id="product-rate" value="${product.rate}">${product.rate}</data>
             </div>
             </div>
             </div>
@@ -215,7 +223,7 @@ function addItemToCart(pId) {
  */
 
 function searchProduct(data, searchTxt, optional) {
-  console.log(optional);
+  // console.log(optional);
 
   if (arguments.length == 2) return search(data, searchTxt, "productName");
   else if (arguments.length == 3) return search(data, searchTxt, optional);
@@ -256,8 +264,13 @@ function showProductDetails(pid) {
 // Filters
 let filter = null;
 const filterBtn = document.getElementsByClassName("filter-list")[0];
+const filterElements = document.querySelectorAll(".filter-list button");
+
 filterBtn.addEventListener("click", (event) => {
-  console.log(event.target.innerText);
+  // remove active class from all filters
+  filterElements.forEach((el) => el.classList.remove("active"));
+  event.target.classList.add("active");
+
   filter = event.target.innerText;
   filterProducts();
 });
@@ -272,9 +285,12 @@ function filterProducts() {
     sortedProducts = allProducts.sort(sortAsc);
   } else if (filter == "High Rate") {
     filter = "rate";
-    sortedProducts = allProducts.sort(sortAsc);
+    sortedProducts = allProducts.sort(sortDesc);
   } else if (filter == "New Arrival") {
     filter = "new";
+    sortedProducts = filterOnBadges(allProducts, filter);
+  } else if (filter == "Offers") {
+    filter = "offer";
     sortedProducts = filterOnBadges(allProducts, filter);
   }
   displayListOfProducts(sortedProducts);
@@ -289,3 +305,12 @@ function sortDesc(p1, p2) {
 function filterOnBadges(products, filter) {
   return products.filter((product) => product.padge == filter);
 }
+
+/**============== */
+// View ALl Products Btn
+const viewAllProdBtn = document.getElementsByClassName("btn btn-outline")[0];
+viewAllProdBtn.addEventListener("click", function () {
+  filterElements.forEach((el) => el.classList.remove("active"));
+
+  displayListOfProducts(allProducts);
+});

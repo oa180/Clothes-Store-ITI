@@ -816,7 +816,6 @@ body {
   }
 
   .nav-open-btn,
-  .header-action-btn:is(:nth-child(2)),
   .navbar-top,
   .overlay {
     display: none;

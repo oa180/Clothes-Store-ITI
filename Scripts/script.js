@@ -165,7 +165,9 @@ function displayListOfProducts(products) {
             : ""
         }
         <div class="card-actions">
-        <button class="card-action-btn" aria-label="Quick view">
+        <button class="card-action-btn" onclick="showProductDetails(${
+          product.id
+        })" aria-label="Quick view">
         <ion-icon name="eye-outline"></ion-icon>
         </button>
           <button

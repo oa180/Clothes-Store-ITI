@@ -4,6 +4,13 @@
 /**Window Onload  */
 window.addEventListener("load", () => {
   updateCartItemsPadge();
+
+  setInterval(() => {
+    i++;
+    i == sliderImages.length ? (i = 0) : (i = i);
+
+    sliderImg.src = sliderImages[i];
+  }, 5000);
 });
 
 const allProducts = data;
@@ -49,9 +56,10 @@ window.addEventListener("scroll", function () {
 // Image Slider
 let i = 0;
 const sliderImages = [
-  "../images/hero-banner.jpg",
-  "../images/blog-3.jpg",
-  "../images/blog-2.jpg",
+  "../images/blog-7.jpg",
+  "../images/blog-5.jpg",
+  "../images/blog-6.jpg",
+  "../images/blog-8.jpg",
 ];
 
 /** ************************************************* */
@@ -218,6 +226,17 @@ function addItemToCart(pId) {
     localStorage.setItem(pId, 1);
     updateCartItemsPadge();
   }
+  Toastify({
+    text: "Added to cart",
+    className: "info",
+    style: {
+      background: `linear-gradient(
+        30deg,
+        var(--ocean-green) 0%,
+        var(--middle-blue-green) 100%
+      )`,
+    },
+  }).showToast();
 }
 
 /**

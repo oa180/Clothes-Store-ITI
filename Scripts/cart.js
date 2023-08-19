@@ -131,6 +131,17 @@ function removeCartItem(pid, event) {
   localStorage.removeItem(pid);
   changeCartFocusImg("../images/shiipingcart2resized.jpg");
   displayItemInCart();
+  Toastify({
+    text: "Item Removed",
+    className: "info",
+    style: {
+      background: `linear-gradient(
+        30deg,
+        var(--ocean-green) 0%,
+        var(--middle-blue-green) 100%
+      )`,
+    },
+  }).showToast();
 }
 
 /**============================================== */

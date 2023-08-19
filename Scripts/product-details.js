@@ -71,4 +71,16 @@ function addItemToCart(pId) {
     localStorage.setItem(pId, 1);
     updateCartItemsPadge();
   }
+
+  Toastify({
+    text: "Added to cart",
+    className: "info",
+    style: {
+      background: `linear-gradient(
+        30deg,
+        var(--ocean-green) 0%,
+        var(--middle-blue-green) 100%
+      )`,
+    },
+  }).showToast();
 }

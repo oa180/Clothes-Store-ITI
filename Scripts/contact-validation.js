@@ -31,10 +31,11 @@ function showSubmitBtn() {
 
 function nameValidation() {
   const nameError = document.getElementsByClassName("nameError")[0];
+  const nameReg = /^[a-zA-Z ]+$/;
+  const validEmailFormat = nameReg.test(nameElement.value);
+  console.log(validEmailFormat);
 
-  console.log(nameError);
-
-  if (nameElement.value.length < 4) {
+  if (nameElement.value.length < 3 || !validEmailFormat) {
     nameElement.classList.add("notValidInput");
     nameError.classList.remove("hidden");
     validFormIndexes[0] = 0;

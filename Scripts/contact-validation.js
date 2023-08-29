@@ -1,7 +1,7 @@
 const myForm = document.getElementsByClassName("container")[0];
 const nameElement = document.getElementById("textName");
 const emailElement = document.getElementById("textEmail");
-const passwordElement = document.getElementById("textPassword");
+const messageElement = document.getElementById("messageTxt");
 const submitBtn = document.getElementsByClassName("submitBtn")[0];
 const contactCard = document.getElementsByClassName("contact-info")[0];
 
@@ -19,7 +19,7 @@ showSubmitBtn();
 function formValidation() {
   nameValidation();
   emailValidation();
-  passwordValidation();
+  messageValidation();
 }
 
 function showSubmitBtn() {
@@ -35,7 +35,7 @@ function nameValidation() {
   const validEmailFormat = nameReg.test(nameElement.value);
   console.log(validEmailFormat);
 
-  if (nameElement.value.length < 3 || !validEmailFormat) {
+  if (nameElement.value.trim().length < 3 || !validEmailFormat) {
     nameElement.classList.add("notValidInput");
     nameError.classList.remove("hidden");
     validFormIndexes[0] = 0;
@@ -65,15 +65,15 @@ function emailValidation() {
   showSubmitBtn();
 }
 
-function passwordValidation() {
-  const passwordError = document.getElementsByClassName("passwordError")[0];
-  if (passwordElement.value.length < 8) {
-    passwordElement.classList.add("notValidInput");
-    passwordError.classList.remove("hidden");
+function messageValidation() {
+  const messageError = document.getElementsByClassName("messageError")[0];
+  if (messageElement.value.length < 30) {
+    messageElement.classList.add("notValidInput");
+    messageError.classList.remove("hidden");
     validFormIndexes[2] = 0;
   } else {
-    passwordElement.classList.remove("notValidInput");
-    passwordError.classList.add("hidden");
+    messageElement.classList.remove("notValidInput");
+    messageError.classList.add("hidden");
     validFormIndexes[2] = 1;
   }
   showSubmitBtn();
@@ -88,4 +88,4 @@ function contactRedirect(e) {
 myForm.addEventListener("submit", formValidation);
 nameElement.addEventListener("keyup", nameValidation);
 emailElement.addEventListener("keyup", emailValidation);
-passwordElement.addEventListener("keyup", passwordValidation);
+messageElement.addEventListener("keyup", messageValidation);

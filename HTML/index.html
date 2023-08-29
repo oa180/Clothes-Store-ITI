@@ -140,6 +140,16 @@
             <li>
               <a href="./contact-page.html" class="navbar-link">Contact</a>
             </li>
+            <li>
+              <button class="header-action-btn cart-btn">
+                <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+                <p class="header-action-label">Cart</p>
+                <div class="btn-badge green cart-no-items" aria-hidden="true">
+                  0
+                </div>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -215,7 +225,10 @@
                     class="w-100"
                   />
                 </figure>
-                <a href="#" id="Sunglasses" class="btn btn-secondary"
+                <a
+                  href="#product-list"
+                  id="Sunglasses"
+                  class="btn btn-secondary"
                   >Sunglass & Eye</a
                 >
               </li>
@@ -228,7 +241,9 @@
                     class="w-100"
                   />
                 </figure>
-                <a href="#" id="Men" class="btn btn-secondary">Men Wear</a>
+                <a href="#product-list" id="Men" class="btn btn-secondary"
+                  >Men Wear</a
+                >
               </li>
               <li class="category-item">
                 <figure class="category-banner">
@@ -239,7 +254,9 @@
                     class="w-100"
                   />
                 </figure>
-                <a href="#" id="Woman" class="btn btn-secondary">Woman Wear</a>
+                <a href="#product-list" id="Woman" class="btn btn-secondary"
+                  >Woman Wear</a
+                >
               </li>
               <li class="category-item">
                 <figure class="category-banner">
@@ -250,7 +267,7 @@
                     class="w-100"
                   />
                 </figure>
-                <a href="#" id="FootWear" class="btn btn-secondary"
+                <a href="#product-list" id="FootWear" class="btn btn-secondary"
                   >Exclusive Footwear</a
                 >
               </li>
@@ -264,7 +281,7 @@
                     class="w-100"
                   />
                 </figure>
-                <a href="#" id="Accessory" class="btn btn-secondary"
+                <a href="#product-list" id="Accessory" class="btn btn-secondary"
                   >Accessory</a
                 >
               </li>
@@ -278,7 +295,9 @@
                     class="w-100"
                   />
                 </figure>
-                <a href="#" id="Kids" class="btn btn-secondary">Kids</a>
+                <a href="#product-list" id="Kids" class="btn btn-secondary"
+                  >Kids</a
+                >
               </li>
             </ul>
           </div>
@@ -305,7 +324,7 @@
               </li>
             </ul>
 
-            <ul class="product-list"></ul>
+            <ul class="product-list" id="product-list"></ul>
 
             <button class="btn btn-outline">View All Products</button>
           </div>

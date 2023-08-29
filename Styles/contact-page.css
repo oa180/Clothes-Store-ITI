@@ -259,7 +259,8 @@
     background: var(--cultured);
     position: relative;
     /* left: 600px; */
-    height: 400px;
+    height: 90vh;
+    width: 80%;
     margin: auto;
     top: 10px;
     margin-bottom: 40px;
@@ -267,8 +268,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    width: 700px;
-    overflow: hidden;
+    /* width: 700px; */
+    /* overflow: hidden; */
     color: var(--eerie-black);
     box-shadow: 10px 10px 5px 0px rgba(226, 226, 226, 0.75);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(226, 226, 226, 0.75);
@@ -279,47 +280,52 @@
   .contact-container img {
     position: relative;
     height: 85%;
+    /* width: 30%; */
     margin: 30px;
   }
 
   .contact-container h1 {
     position: absolute;
-    right: 80px;
-    top: 20px;
+    right: 15%;
+    top: 5%;
     font-size: 50px;
     color: var(--eerie-black);
   }
 
+  .form-container {
+    height: 65%;
+    border: 2px solid var(--eerie-black);
+    border-right: none;
+    border-bottom: none;
+  }
   .form-container form {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    gap: 45px;
     width: 600px;
-    height: 300px;
-    top: 50px;
-    border: 2px solid var(--eerie-black);
-    border-right: none;
-    border-bottom: none;
+    /* height: 90%; */
+    /* top: 50px; */
     padding: 24px;
     font-size: 15px;
   }
+  .form-container form input,
+  textarea {
+    margin-top: 2%;
+    padding: 10px;
+  }
   .form-container form button {
-    /* position: relative;
-    align-items: center;
-    left: 60px;
-    border: 2px solid var(--ocean-green); */
-    width: 55%;
+    width: 60%;
     text-align: center;
-    /* margin: 0 auto; */
-    font-size: 18px;
-    padding: 10px 0;
+    font-size: 20px;
+    padding: 25px 0;
     background: linear-gradient(
       30deg,
       var(--ocean-green) 0%,
       var(--middle-blue-green) 100%
     );
 
+    margin: auto;
     color: var(--cultured);
     cursor: pointer;
     border-radius: 5px;

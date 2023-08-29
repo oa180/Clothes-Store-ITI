@@ -109,7 +109,7 @@
             <div class="formGroub">
               <label>Name</label> <input type="text" id="textName" />
               <div class="nameError hidden">
-                <p class="mb-2">Name must be greater than 3 chars</p>
+                <p class="mb-2">Name must be a string greater than 3 chars</p>
               </div>
             </div>
 
@@ -122,10 +122,16 @@
             </div>
 
             <div class="formGroub">
-              <label for="">Password</label>
-              <input type="password" id="textPassword" />
-              <div class="passwordError hidden">
-                <p class="mb-2">Password must be at least 8 chars</p>
+              <label style="display: block" for="">Message</label>
+              <textarea
+                style="resize: none"
+                type="message"
+                id="messageTxt"
+                rows="5"
+                cols="70"
+              ></textarea>
+              <div class="messageError hidden">
+                <p class="mb-2">Message must be at least 30 chars</p>
               </div>
             </div>
 

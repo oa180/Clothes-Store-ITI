@@ -14,6 +14,7 @@ window.addEventListener("load", () => {
 });
 
 const allProducts = data;
+let currentProducts = [...allProducts];
 console.log(allProducts);
 
 const overlay = document.querySelector("[data-overlay]");
@@ -77,10 +78,12 @@ const categoryItem = document.querySelectorAll(".category a");
 /**Nav bar Events */
 
 // Cart Event
-const cartBtn = document.getElementsByClassName("cart-btn")[0];
+const cartBtn = [...document.getElementsByClassName("cart-btn")];
 
-cartBtn.addEventListener("click", function () {
-  window.open("./cart.html", "_self");
+cartBtn.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    window.open("./cart.html", "_self");
+  });
 });
 
 /** ************************************************* */
@@ -105,14 +108,14 @@ prevtBtn.addEventListener("click", function () {
 //   products = searchProduct(products, this.value);
 // });
 
-searchInput[1].addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    const products = searchProduct(allProducts, this.value);
+searchInput[1].addEventListener("keyup", function (e) {
+  // if (e.key === "Enter") {
+  const products = searchProduct(currentProducts, this.value);
 
-    console.log(products);
+  console.log(products);
 
-    displayListOfProducts(products);
-  }
+  displayListOfProducts(products);
+  // }
 });
 // searchInput.forEach((s) => {
 //   s.addEventListener("keypress", function (e) {
@@ -129,6 +132,7 @@ searchInput[1].addEventListener("keypress", function (e) {
 categoryItem.forEach((item) => {
   item.addEventListener("click", function () {
     const products = searchProduct(allProducts, item.id, "category");
+    currentProducts = products;
     displayListOfProducts(products);
   });
 });
@@ -246,8 +250,17 @@ function addItemToCart(pId) {
 function searchProduct(data, searchTxt, optional) {
   // console.log(optional);
 
-  if (arguments.length == 2) return search(data, searchTxt, "productName");
-  else if (arguments.length == 3) return search(data, searchTxt, optional);
+  if (arguments.length == 2) {
+    let productsSet = new Set();
+
+    let searchResult = search(data, searchTxt, "productName");
+    searchResult.forEach((res) => productsSet.add(res));
+
+    searchResult = search(data, searchTxt, "category");
+    searchResult.forEach((res) => productsSet.add(res));
+
+    return productsSet;
+  } else if (arguments.length == 3) return search(data, searchTxt, optional);
 }
 
 function search(data, searchTxt, attribute) {
@@ -263,12 +276,13 @@ function search(data, searchTxt, attribute) {
 
 // Updata Cart Badge Number
 function updateCartItemsPadge() {
-  let badgeValue = document.getElementsByClassName("cart-no-items")[0];
+  let badgeValue = [...document.getElementsByClassName("cart-no-items")];
+
   let itemsInProduct = Object.keys({ ...localStorage }).filter(
     (key) => key != "current-prod"
   );
 
-  badgeValue.innerText = `${itemsInProduct.length}`;
+  badgeValue.forEach((btn) => (btn.innerText = `${itemsInProduct.length}`));
 }
 /************************ */
 displayListOfProducts(allProducts);
@@ -300,19 +314,19 @@ function filterProducts() {
   let sortedProducts = null;
   if (filter == "Highest Prices") {
     filter = "price";
-    sortedProducts = allProducts.sort(sortDesc);
+    sortedProducts = currentProducts.sort(sortDesc);
   } else if (filter == "Lowest Prices") {
     filter = "price";
-    sortedProducts = allProducts.sort(sortAsc);
+    sortedProducts = currentProducts.sort(sortAsc);
   } else if (filter == "High Rate") {
     filter = "rate";
-    sortedProducts = allProducts.sort(sortDesc);
+    sortedProducts = currentProducts.sort(sortDesc);
   } else if (filter == "New Arrival") {
     filter = "new";
-    sortedProducts = filterOnBadges(allProducts, filter);
+    sortedProducts = filterOnBadges(currentProducts, filter);
   } else if (filter == "Offers") {
     filter = "offer";
-    sortedProducts = filterOnBadges(allProducts, filter);
+    sortedProducts = filterOnBadges(currentProducts, filter);
   }
   displayListOfProducts(sortedProducts);
 }
@@ -333,5 +347,6 @@ const viewAllProdBtn = document.getElementsByClassName("btn btn-outline")[0];
 viewAllProdBtn.addEventListener("click", function () {
   filterElements.forEach((el) => el.classList.remove("active"));
 
+  currentProducts = allProducts;
   displayListOfProducts(allProducts);
 });

@@ -10,6 +10,10 @@
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css"
+    />
     <title>Contact US</title>
   </head>
   <body>
@@ -109,7 +113,9 @@
             <div class="formGroub">
               <label>Name</label> <input type="text" id="textName" />
               <div class="nameError hidden">
-                <p class="mb-2">Name must be a string greater than 3 chars</p>
+                <p class="mb-2">
+                  Name must be only characters greater than 3 chars
+                </p>
               </div>
             </div>
 
@@ -136,11 +142,7 @@
             </div>
 
             <div class="formGroub">
-              <button
-                type="submit"
-                onclick="contactRedirect(event)"
-                class="btn submitBtn disabled"
-              >
+              <button type="submit" class="btn submitBtn disabled">
                 Contact US
               </button>
             </div>
@@ -297,5 +299,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://unpkg.com/toastify-js"></script>
   </body>
 </html>

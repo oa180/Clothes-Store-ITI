@@ -24,15 +24,15 @@ for (let i = 0; i < navElemArr.length; i++) {
 // Hide Header when scrolling 200px
 const header = document.querySelector("[data-header]");
 
-window.addEventListener("scroll", function () {
-  if (this.window.scrollY >= 200) {
-    header.classList.add("hidden");
-    navbarSearch.classList.remove("hide-search");
-  } else {
-    header.classList.remove("hidden");
-    navbarSearch.classList.add("hide-search");
-  }
-});
+// window.addEventListener("scroll", function () {
+//   if (this.window.scrollY >= 200) {
+//     header.classList.add("hidden");
+//     navbarSearch.classList.remove("hide-search");
+//   } else {
+//     header.classList.remove("hidden");
+//     navbarSearch.classList.add("hide-search");
+//   }
+// });
 
 // Cart Event
 const cartBtn = document.getElementsByClassName("cart-btn")[0];

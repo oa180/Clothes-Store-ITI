@@ -79,13 +79,33 @@ function messageValidation() {
   showSubmitBtn();
 }
 
-function contactRedirect(e) {
-  console.log("sss");
-  e.preventDefault();
+// function contactRedirect(e) {
+//   console.log("sss");
+//   e.preventDefault();
 
-  window.open("./index.html", "_Self");
-}
+//   window.open("./index.html", "_Self");
+// }
+
 myForm.addEventListener("submit", formValidation);
 nameElement.addEventListener("keyup", nameValidation);
 emailElement.addEventListener("keyup", emailValidation);
 messageElement.addEventListener("keyup", messageValidation);
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  nameElement.value = "";
+  emailElement.value = "";
+  messageElement.value = "";
+
+  Toastify({
+    text: "Message Sent.",
+    className: "info",
+    style: {
+      background: `linear-gradient(
+        30deg,
+        var(--ocean-green) 0%,
+        var(--middle-blue-green) 100%
+      )`,
+    },
+  }).showToast();
+});
